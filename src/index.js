@@ -1,2 +1,4 @@
 let mix = require('laravel-mix');
-// todo
+let AutoExtract = require('./AutoExtract');
+
+mix.extend('autoExtract', new AutoExtract());
