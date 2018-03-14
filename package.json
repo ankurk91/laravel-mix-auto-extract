@@ -1,0 +1,37 @@
+{
+  "name": "laravel-mix-auto-extract",
+  "version": "0.0.1",
+  "description": "Laravel Mix plugin to auto extract vendor js.",
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankurk91/laravel-mix-auto-extract.git"
+  },
+  "keywords": [
+    "laravel",
+    "laravel-mix",
+    "plugin",
+    "extract",
+    "vendor"
+  ],
+  "author": "ankurk91",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ankurk91/laravel-mix-auto-extract/issues"
+  },
+  "homepage": "https://github.com/ankurk91/laravel-mix-auto-extract",
+  "scripts": {
+    "test": "echo \"Error: tests are coming soon.\" && exit 1"
+  },
+  "dependencies": {
+    "laravel-mix": ">=2.1.0"
+  },
+  "engines": {
+    "node": ">= 6.9.0",
+    "npm": ">= 3.10.0"
+  }
+}
