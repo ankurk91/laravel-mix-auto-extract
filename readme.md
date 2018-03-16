@@ -5,7 +5,7 @@
 [![github-tag](https://img.shields.io/github/tag/ankurk91/laravel-mix-auto-extract.svg?maxAge=1800)](https://github.com/ankurk91/laravel-mix-auto-extract/)
 [![license](https://img.shields.io/github/license/ankurk91/laravel-mix-auto-extract.svg?maxAge=1800)](https://yarnpkg.com/en/package/laravel-mix-auto-extract)
 
-Laravel Mix plugin to auto extract vendor js.
+[Laravel Mix](https://github.com/JeffreyWay/laravel-mix) plugin to auto extract 3rd party dependencies to `vendor.js`.
 
 ### What was the problem?
 * Laravel Mix already has an `extract()` method which accepts an array of dependencies that you want to extract as `vendor.js` 
@@ -35,20 +35,21 @@ yarn add laravel-mix-auto-extract
 ```
 
 ## Usage
-* Update your `wevpack.mix.js`
+* Update your `webpack.mix.js`
 ```js
+let mix = require('laravel-mix');
 // Require this package
 require('laravel-mix-auto-extract');
-// You code may go here
-// mix.js('./resources/assets/js/bootstrap.js', './public/js/app.js')
+// Your code may go here
+// mix.js('./resources/assets/js/app.js', './public/js/app.js')
 // Call this method at last
 mix.autoExtract();
 ```
 * Use in blade template
 ```blade
-<script src="{{ mix('js/manifest.js') }}" type="text/javascript"></script>
-<script src="{{ mix('js/vendor.js') }}" type="text/javascript"></script>
-<script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+<script src="{{ mix('js/manifest.js') }}"></script>
+<script src="{{ mix('js/vendor.js') }}"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 ```
 * Remove any reference to `extract()` method
 

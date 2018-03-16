@@ -27,7 +27,7 @@
     "test": "echo \"Error: tests are coming soon.\" && exit 1"
   },
   "dependencies": {
-    "laravel-mix": ">=2.1.0"
+    "laravel-mix": ">=2.1.0 <3.0.0"
   },
   "engines": {
     "node": ">=6.9.0",
