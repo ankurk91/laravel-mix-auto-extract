@@ -26,7 +26,7 @@
   "scripts": {
     "test": "echo \"Error: tests are coming soon.\" && exit 1"
   },
-  "dependencies": {
+  "peerDependencies": {
     "laravel-mix": ">=2.1.0 <3.0.0"
   },
   "engines": {
