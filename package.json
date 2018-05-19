@@ -1,7 +1,7 @@
 {
   "name": "laravel-mix-auto-extract",
   "version": "0.0.4",
-  "description": "Laravel Mix plugin to auto extract vendor js.",
+  "description": "Laravel Mix plugin to auto extract vendor.js.",
   "main": "src/index.js",
   "files": [
     "src"
