@@ -14,7 +14,7 @@ class AutoExtract {
         minChunks: function (module) {
           // This prevents stylesheet resources with these extensions
           // from being moved from their original chunk to the vendor chunk
-          if (module.resource && (/^.*\.(css|scss|less)$/).test(module.resource)) {
+          if (module.resource && (/^.*\.(css|scss|less|styl)$/).test(module.resource)) {
             return false;
           }
           return module.context && module.context.indexOf("node_modules") !== -1;
