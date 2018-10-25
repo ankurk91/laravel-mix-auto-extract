@@ -63,11 +63,11 @@ mix.autoExtract({
   generateManifest: true,
 });
 ```
-* Paths are relative the default output directory, usually `public`.
+* Paths are relative to the default output directory, usually `public`.
 * Don't suffix paths with `.js`
 
 ## :warning: Caution
-* Don't use `mix.extract([])` method along with this plugin.
+* Don't use `extract()` method along with `autoExtract()` method.
 
 ## Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
