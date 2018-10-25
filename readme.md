@@ -17,10 +17,10 @@
 * You just need to reference them in your code somewhere. For example:
 ```js
 // app.js
-import moment from 'moment';
+import Vue from 'vue';
 import axios from 'axios';
 ```
-* Now `moment` and `axios` will be auto extracted to `vendor.js` file
+* Now `vue` and `axios` will be auto extracted to `vendor.js` file
 
 ## Requirements
 * [Laravel Mix](https://github.com/JeffreyWay/laravel-mix) >=2.1.0
@@ -53,9 +53,21 @@ mix.autoExtract();
 ```
 * Remove any reference to `extract()` method in `webpack.mix.js`
 
+### Configuration Options
+Here are the default options, all of them are optional.
+```js
+mix.autoExtract({
+  vendorPath: 'js/vendor',
+  manifestPath: 'js/manifest',
+  excludeRegExp: /^.*\.(css|scss|sass|less|styl)$/,
+  generateManifest: true,
+});
+```
+* Paths are relative the default output directory, usually `public`.
+* Don't suffix paths with `.js`
+
 ## :warning: Caution
 * Don't use `mix.extract([])` method along with this plugin.
-* This plugin is not compatible with Webpack v4.x
 
 ## Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
