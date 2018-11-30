@@ -5,10 +5,10 @@
 [![github-tag](https://img.shields.io/github/tag/ankurk91/laravel-mix-auto-extract.svg?maxAge=1800)](https://github.com/ankurk91/laravel-mix-auto-extract/)
 [![license](https://img.shields.io/github/license/ankurk91/laravel-mix-auto-extract.svg?maxAge=1800)](https://yarnpkg.com/en/package/laravel-mix-auto-extract)
 
-[Laravel Mix](https://github.com/JeffreyWay/laravel-mix) plugin to auto extract 3rd party dependencies to `vendor.js`.
+[Laravel Mix](https://github.com/JeffreyWay/laravel-mix) plugin to auto extract 3rd party dependencies as `vendor.js`.
 
 ### What was the problem?
-* Laravel Mix already has an `extract()` method which accepts an array of dependencies that you want to extract as `vendor.js` 
+* Laravel Mix already has a `extract()` method which accepts an array of dependencies that you want to extract as `vendor.js` 
 * Whenever you install a new package, you also need to update this list to make it work.
 * Read more on this [issue](https://github.com/JeffreyWay/laravel-mix/issues/1233)
 
@@ -30,44 +30,44 @@ import axios from 'axios';
 # npm
 npm install laravel-mix-auto-extract --save
 
-# Yarn
+# yarn
 yarn add laravel-mix-auto-extract
 ```
 
 ## Usage
-* Update your `webpack.mix.js`
+Update your `webpack.mix.js`
 ```js
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
 // Require this package
 require('laravel-mix-auto-extract');
 // Your code may go here
 // mix.js('./resources/assets/js/app.js', './public/js/app.js')
+// mix.version()
 // Call this method at last
 mix.autoExtract();
 ```
-* Then use in your blade template
+Then update your blade template
 ```blade
 <script src="{{ mix('js/manifest.js') }}"></script>
 <script src="{{ mix('js/vendor.js') }}"></script>
 <script src="{{ mix('js/app.js') }}"></script>
 ```
-* Remove any reference to `extract()` method in `webpack.mix.js`
+Remove any reference to `extract()` method in `webpack.mix.js`
 
 ### Configuration Options
 Here are the default options, all of them are optional.
 ```js
 mix.autoExtract({
-  vendorPath: 'js/vendor',
+  vendorPath: 'js/vendor', // Don't suffix paths with `.js`
   manifestPath: 'js/manifest',
   excludeRegExp: /^.*\.(css|scss|sass|less|styl)$/,
   generateManifest: true,
 });
 ```
-* Paths are relative to the default output directory, usually `public`.
-* Don't suffix paths with `.js`
+Paths are relative to the default output directory, usually `./public`. 
 
 ## :warning: Caution
-* Don't use `extract()` method along with `autoExtract()` method.
+Don't use `autoExtract()` method along with `extract()` method.
 
 ## Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
