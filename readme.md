@@ -7,6 +7,8 @@
 
 [Laravel Mix](https://github.com/JeffreyWay/laravel-mix) plugin to auto extract 3rd party dependencies as `vendor.js`.
 
+> :mega: Notice: This feature has been added to Laravel Mix v4.0 now. :tada:
+
 ### What was the problem?
 * Laravel Mix already has a `extract()` method which accepts an array of dependencies that you want to extract as `vendor.js` 
 * Whenever you install a new package, you also need to update this list to make it work.
@@ -23,7 +25,7 @@ import axios from 'axios';
 * Now `vue` and `axios` will be auto extracted to `vendor.js` file
 
 ## Requirements
-* [Laravel Mix](https://github.com/JeffreyWay/laravel-mix) >=2.1.0
+* [Laravel Mix](https://github.com/JeffreyWay/laravel-mix) >=2.1.0 <4.0.0
 
 ## Installation
 ```bash
